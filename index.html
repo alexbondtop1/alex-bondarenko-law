@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бондаренко Александр — юрист по страховым спорам</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("PUBLIC_KEY_EMAILJS");
+    })();
+  </script>
+
+  <style>
+    :root {
+      --bg-dark:#0f1216;
+      --bg-light:#f4f5f7;
+      --text-light:#ffffff;
+      --text-dark:#111111;
+      --accent:#c9b37e;
+      --muted:#9aa0a6;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Inter',sans-serif;background:var(--bg-dark);color:var(--text-light);line-height:1.6}
+    section{padding:100px 8%}
+
+    .hero{min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:center}
+    .hero h1{font-family:'Playfair Display',serif;font-size:56px;line-height:1.15;margin-bottom:24px}
+    .hero p{font-size:18px;color:var(--muted);margin-bottom:40px;max-width:520px}
+    .btn{display:inline-block;padding:14px 36px;border:1px solid var(--accent);color:var(--accent);text-decoration:none;font-size:14px;letter-spacing:.08em;text-transform:uppercase}
+    .hero-photo img{max-width:420px;width:100%;object-fit:cover;border-radius:2px;filter:none!important}
+
+    .about,.services,.contact{background:var(--bg-light);color:var(--text-dark)}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+    h2{font-family:'Playfair Display',serif;font-size:42px;margin-bottom:24px}
+
+    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;text-align:center}
+    .stat h3{font-size:48px;color:var(--accent)}
+    .stat span{font-size:13px;color:var(--muted);text-transform:uppercase}
+
+    .service-list,.adv-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:40px}
+    .service{border-top:1px solid #ddd;padding-top:20px}
+    .adv{border-left:2px solid var(--accent);padding-left:20px;color:var(--muted)}
+
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+    form{display:flex;flex-direction:column;gap:20px}
+    input,textarea{padding:14px;font-size:15px;border:1px solid #ccc}
+    button{padding:14px;background:var(--bg-dark);color:var(--accent);border:1px solid var(--accent);letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+
+    footer{padding:40px 8%;background:#0b0e12;color:var(--muted);font-size:13px}
+
+    @media(max-width:900px){
+      .hero,.about,.contact{grid-template-columns:1fr}
+      .hero h1{font-size:44px}
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div>
+    <h1>Юрист по страховым спорам<br>с опытом более 15 лет</h1>
+    <p>Более 5 млрд рублей взыскано для клиентов. Бывший руководитель юридического отдела страховых компаний.</p>
+    <a href="#contact" class="btn">Получить консультацию</a>
+  </div>
+  <div class="hero-photo">
+    <img src="photo.jpg" alt="Бондаренко Александр">
+  </div>
+</section>
+
+<section class="about">
+  <h2>Эксперт, которому доверяют</h2>
+  <p>Опыт работы внутри страховых компаний позволяет добиваться максимального результата для клиента.</p>
+</section>
+
+<section class="stats">
+  <div class="stat"><h3>15+</h3><span>лет практики</span></div>
+  <div class="stat"><h3>5 млрд ₽</h3><span>взыскано</span></div>
+  <div class="stat"><h3>5000+</h3><span>клиентов</span></div>
+</section>
+
+<section class="services">
+  <h2>Страховые споры</h2>
+  <div class="service-list">
+    <div class="service">Отказы в выплатах</div>
+    <div class="service">Занижение выплат</div>
+    <div class="service">ОСАГО и КАСКО</div>
+    <div class="service">Страхование имущества</div>
+  </div>
+</section>
+
+<section class="advantages">
+  <h2>Почему выбирают меня</h2>
+  <div class="adv-list">
+    <div class="adv">Опыт внутри страховых компаний</div>
+    <div class="adv">Судебная практика</div>
+    <div class="adv">Фокус на результате</div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div>
+    <h2>Контакты</h2>
+    <p><strong>Телефон:</strong> +7 937 091-14-56</p>
+    <p><strong>Email:</strong> alexbondtop1@gmail.com</p>
+    <p><strong>Адрес:</strong> Москва, пр. Мира, 70А</p>
+  </div>
+
+  <form id="consultForm">
+    <input type="text" name="name" placeholder="Ваше имя" required>
+    <input type="tel" name="phone" placeholder="Телефон" required>
+    <textarea name="message" rows="4" placeholder="Опишите ситуацию"></textarea>
+    <button type="submit">Отправить заявку</button>
+    <div id="formStatus"></div>
+  </form>
+</section>
+
+<footer>
+  © Бондаренко Александр. Юрист по страховым спорам.
+</footer>
+
+<script>
+  document.getElementById("consultForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    emailjs.send("SERVICE_ID", "TEMPLATE_ID", {
+      name: this.name.value,
+      phone: this.phone.value,
+      message: this.message.value,
+      to_email: "alexbondtop1@gmail.com"
+    }).then(
+      function() {
+        document.getElementById("formStatus").innerText = "Заявка отправлена. Я свяжусь с вами.";
+      },
+      function() {
+        document.getElementById("formStatus").innerText = "Ошибка отправки. Попробуйте позже.";
+      }
+    );
+
+    this.reset();
+  });
+</script>
+
+</body>
+</html>
